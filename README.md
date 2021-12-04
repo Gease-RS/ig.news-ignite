@@ -19,3 +19,17 @@ yarn add react-icons
 ```
 yarn add stripe
 ```
+
+```
+yarn add @prismicio/client
+```
+
+Converte os formatos do prismic para html
+
+```
+yarn add prismic-dom
+```
+
+```
+yarn add @types/prismic-dom
+```
