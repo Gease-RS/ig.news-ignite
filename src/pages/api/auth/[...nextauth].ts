@@ -1,4 +1,5 @@
 import NextAuth from "next-auth";
+//import Provider from "next-auth/providers";
 import GithubProvider from "next-auth/providers/github";
 
 export default NextAuth({
