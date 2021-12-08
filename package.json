@@ -10,7 +10,9 @@
   },
   "dependencies": {
     "@prismicio/client": "^5.1.0",
+    "@stripe/stripe-js": "^1.21.2",
     "@types/prismic-dom": "^2.1.1",
+    "axios": "^0.24.0",
     "faunadb": "^4.4.1",
     "next": "12.0.3",
     "next-auth": "^4.0.2",
