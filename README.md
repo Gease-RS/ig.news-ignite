@@ -21,6 +21,10 @@ yarn add stripe
 ```
 
 ```
+yarn add faunadb
+```
+
+```
 yarn add @prismicio/client
 ```
 
