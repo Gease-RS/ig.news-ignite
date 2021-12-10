@@ -45,3 +45,11 @@ yarn add prismic-dom
 ```
 yarn add @types/prismic-dom
 ```
+
+```
+stripe login
+```
+
+```
+stripe listen --forward-to localhost:3000/api/webhooks
+```
