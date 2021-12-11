@@ -4,9 +4,10 @@ import { fauna } from "../../../services/fauna";
 
 import { stripe } from "../../../services/stripe";
 
-export async function saveSubscripition(
+export async function saveSubscription(
   subscriptionId: string,
-  costumerId: string
+  costumerId: string,
+  createAction = false
 ) {
   //Buscar o usuário no banco do Fauna com o ID {customerId}
   //Salvar os dados da subscription no banco do Fauna
@@ -26,7 +27,19 @@ export async function saveSubscripition(
     price_id: subscription.items.data[0].price.id,
   };
 
-  await fauna.query(
-    q.Create(q.Collection("subscriptions"), { data: subscriptionData })
-  );
+  if (createAction) {
+    await fauna.query(
+      q.Create(q.Collection("subscriptions"), { data: subscriptionData })
+    );
+  } else {
+    await fauna.query(
+      q.Replace(
+        q.Select(
+          "ref",
+          q.Get(q.Match(q.Index("subscription_by_id"), subscriptionId))
+        ),
+        { data: subscriptionData }
+      )
+    );
+  }
 }
